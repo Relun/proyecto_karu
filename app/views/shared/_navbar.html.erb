@@ -1,4 +1,4 @@
-        <div class="top-bar py-1 d-flex justify-content-between px-2" style="background-color: #073B4C;">
+        <div class="top-bar py-1 d-flex justify-content-between px-2 dark-green-bg">
         <div class="">
             <a href=""><i class="fa-brands fa-instagram"></i></a>
             <a href=""><i class="fa-brands fa-facebook"></i></a>
@@ -20,7 +20,7 @@
         </div>
     </div>
     
-    <nav class="navbar navbar-expand-lg navbar-dark py-4" style="background-color: #06D6A0;">
+    <nav class="navbar navbar-expand-lg navbar-dark py-4 clear-green-bg">
         <div class="container-fluid">
             <a class="navbar-brand logo" href="#">Karü</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -31,9 +31,9 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <!--<li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">INICIO</a>
-                    </li>-->
+                    <li class="nav-item mx-2">
+                        <%=link_to 'INICIO', home_index_path, style: "color:white; text-decoration:none" %>
+                    </li>
                     <li class="nav-item mx-2">
                         <%=link_to 'PRODUCTOS', products_path, style: "color:white; text-decoration:none" %>
                     </li>

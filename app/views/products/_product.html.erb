@@ -1,16 +1,16 @@
 <div id="<%= dom_id product %>">
 
-  <div class="row">
-    <div class="col-4 mx-4">
-      <div class="card" style="width: 18rem;">
+  <div class="row mx-auto text-center">
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card mx-2 my-2" style="width: 16rem;">
       <div>
-        <%= image_tag(product.url_img, class: 'img-responsive center-block') %>
+        <%= image_tag(product.url_img, class: 'img-responsive center-block img-fluid imagen') %>
       </div>
         <div class="card-body">
-          <p class="card-text"><strong>Description:</strong> <%= product.description %></p>
-          <p class="card-text"><strong>Price:</strong> <%= product.price %></p>
-          <p class="card-text"><strong>Category:</strong> <%= product.category %></p>
-          <%= link_to "Show this product", product %>
+          <p class="card-text"><strong></strong> <%= product.description %></p>
+          <p class="card-text"><strong>$</strong> <%= product.price %></p>
+          <!--<p class="card-text"><strong>Category:</strong> <%= product.category %></p>-->
+          <%= link_to "Ver producto", product, class:'dark-green-bg ',style: "color:white; text-decoration:none; border: none;" %>
         </div>
       </div>
     </div>

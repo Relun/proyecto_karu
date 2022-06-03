@@ -1,5 +1,21 @@
-img {
+.imagen {
     width: 100%;
-    height: 100%; 
-    object-fit: contain;
+    height: 15vw; 
+    object-fit: cover;
+}
+
+.dark-green {
+    color: #073B4C;
+}
+
+.dark-green-bg {
+    background-color: #073B4C;
+}
+
+.clear-green {
+    color:#06D6A0;
+}
+
+.clear-green-bg {
+    background-color: #06D6A0;
 }
