@@ -1,13 +1,16 @@
 <div id="<%= dom_id product %>">
 
   <div class="row">
-    <div class="col-6">
+    <div class="col-4 mx-4">
       <div class="card" style="width: 18rem;">
-        <%= image_tag(product.url_img) %>
+      <div>
+        <%= image_tag(product.url_img, class: 'img-responsive center-block') %>
+      </div>
         <div class="card-body">
           <p class="card-text"><strong>Description:</strong> <%= product.description %></p>
           <p class="card-text"><strong>Price:</strong> <%= product.price %></p>
           <p class="card-text"><strong>Category:</strong> <%= product.category %></p>
+          <%= link_to "Show this product", product %>
         </div>
       </div>
     </div>

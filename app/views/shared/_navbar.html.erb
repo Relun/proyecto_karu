@@ -1,3 +1,25 @@
+        <div class="top-bar py-1 d-flex justify-content-between px-2" style="background-color: #073B4C;">
+        <div class="">
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            <a href=""><i class="fa-solid fa-phone"></i></a>
+            <a href=""><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <div>
+            <a href=""><i class="fa-solid fa-user"></i></a>
+            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>  
+             <% if user_signed_in? %>
+                <li class="nav-item mx-2">
+                    <%= button_to "Salir", destroy_user_session_path, method: :delete, data: { turbo: "false" } %>
+                </li>
+             <% else %>
+            <a href=""><%= link_to "REGISTRARSE", new_user_registration_path, style: "color:white; text-decoration:none" %></a> 
+            <a href=""><%= link_to "INICIAR SESIÓN", new_user_session_path, style: "color:white; text-decoration:none" %></a> 
+            <% end %>
+        </div>
+    </div>
+    
     <nav class="navbar navbar-expand-lg navbar-dark py-4" style="background-color: #06D6A0;">
         <div class="container-fluid">
             <a class="navbar-brand logo" href="#">Karü</a>
@@ -39,7 +61,7 @@
                 </ul>
               </li> -->
 
-                    <% if user_signed_in? %>
+                    <!--<% if user_signed_in? %>
                         <li class="nav-item mx-2">
                             <%= button_to "Salir", destroy_user_session_path, method: :delete, data: { turbo: "false" } %>
                         </li>
@@ -50,7 +72,7 @@
                         <li class="nav-item mx-2">
                             <%= link_to "INICIAR SESIÓN", new_user_session_path, style: "color:white; text-decoration:none" %>
                         </li>
-                    <% end %>
+                    <% end %>-->
                 </ul>
 
                 <form class="d-flex">
