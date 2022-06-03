@@ -6,6 +6,7 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <!--<li class="nav-item">
@@ -37,7 +38,21 @@
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
               </li> -->
+
+                    <% if user_signed_in? %>
+                        <li class="nav-item mx-2">
+                            <%= button_to "Salir", destroy_user_session_path, method: :delete, data: { turbo: "false" } %>
+                        </li>
+                    <% else %>
+                        <li class="nav-item mx-2">
+                            <%= link_to "REGISTRARSE", new_user_registration_path, style: "color:white; text-decoration:none" %>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <%= link_to "INICIAR SESIÓN", new_user_session_path, style: "color:white; text-decoration:none" %>
+                        </li>
+                    <% end %>
                 </ul>
+
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
                     <button class="btn btn-outline-light" type="submit"><i

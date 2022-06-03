@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_02_035708) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_02_201235) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,6 +30,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_02_035708) do
     t.string "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "product_id", null: false
+    t.bigint "order_id", null: false
+    t.index ["order_id"], name: "index_details_on_order_id"
+    t.index ["product_id"], name: "index_details_on_product_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -51,5 +55,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_02_035708) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "name"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "details", "orders"
+  add_foreign_key "details", "products"
   add_foreign_key "orders", "clients"
 end
