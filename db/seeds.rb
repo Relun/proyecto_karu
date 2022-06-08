@@ -8,15 +8,22 @@
 
 require 'faker'
 
-4.times do |i|
+titles = ["Cartera de caucho reciclado", "Tabla de picar de plástico reciclado", "Mochila de caucho reciclado"]
+types = ["Servicio", "Reciclados", "Sustentables", "Granel"]
+photos = ["cauxo.png", "cauxo1.png", "tabla.png", "tabla1.png"]
+
+8.times do |i|
     Product.create(
-        category: Faker::Commerce.material,
+        category: types.sample,
         price: Faker::Commerce.price,
         description: Faker::Marketing.buzzwords,
-        url_img: "https://loremflickr.com/#{rand(150..200)}/#{rand(150..200)}/all"
+        #url_img: "https://loremflickr.com/#{rand(150..200)}/#{rand(150..200)}/all",
+        url_img: photos.sample,
+        title: titles.sample
         #url_img: Faker::LoremFlickr.image
         #url_img: Faker::Avatar.image(size: "50x50")
     )
 end
 
 
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

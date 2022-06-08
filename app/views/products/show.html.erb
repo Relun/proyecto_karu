@@ -1,10 +1,29 @@
 <p style="color: green"><%= notice %></p>
+<div class="container">
+  <div class="card mb-3 border-0" style="max-width: 50rem;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <%= image_tag(@product.url_img, class: 'img-fluid rounded-start') %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= @product.title %></h5>
+          <p class="card-text"><strong>$</strong> <%= @product.price %></p>
+          <p class="card-text"><small class="text-muted">5 en stock</small></p>
+          <%= button_to "Agregar al carro" %>
+          <p class="card-text mt-4"><strong>Descripción</strong></p>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><strong>Categoría:</strong> <%= @product.category %></p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<%= render @product %>
+  <!-- <div>
+    <%= link_to "Edit this product", edit_product_path(@product) %> |
+    <%= link_to "Back to products", products_path %>
 
-<div>
-  <%= link_to "Edit this product", edit_product_path(@product) %> |
-  <%= link_to "Back to products", products_path %>
-
-  <%= button_to "Destroy this product", @product, method: :delete %>
+    <%= button_to "Destroy this product", @product, method: :delete %>
+  </div> -->
+  
 </div>

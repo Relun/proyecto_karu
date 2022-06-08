@@ -1,18 +1,18 @@
 <p style="color: green"><%= notice %></p>
+<div class="container">
+  <h2 class="text-center my-4">NUESTROS PRODUCTOS</h2>
 
-<h2 class="text-center my-4">NUESTROS PRODUCTOS</h2>
-
-<div id="products" class="d-flex flex-wrap">
-  <% @products.each do |product| %>
-    <%= render product %>
-    
+  <div id="products" class="d-flex flex-wrap">
+    <% @products.each do |product| %>
+      <%= render product %>
       
-   
-  <% end %>
+        
+    
+    <% end %>
+  </div>
+
+ <!-- <%= link_to "New product", new_product_path %> -->
 </div>
-
-<%= link_to "New product", new_product_path %>
-
 
 
 

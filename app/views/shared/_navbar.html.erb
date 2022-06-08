@@ -14,8 +14,8 @@
                     <%= button_to "Salir", destroy_user_session_path, method: :delete, data: { turbo: "false" } %>
                 </li>
              <% else %>
-            <a href=""><%= link_to "REGISTRARSE", new_user_registration_path, style: "color:white; text-decoration:none" %></a> 
-            <a href=""><%= link_to "INICIAR SESIÓN", new_user_session_path, style: "color:white; text-decoration:none" %></a> 
+            <a href=""><%= link_to "REGISTRARSE", new_user_registration_path, style: "color:white; text-decoration:none", class:'mx-2' %></a> 
+            <a href=""><%= link_to "INICIAR SESIÓN", new_user_session_path, style: "color:white; text-decoration:none", class:'mx-3' %></a> 
             <% end %>
         </div>
     </div>
@@ -35,18 +35,23 @@
                         <%=link_to 'INICIO', home_index_path, style: "color:white; text-decoration:none" %>
                     </li>
                     <li class="nav-item mx-2">
-                        <%=link_to 'PRODUCTOS', products_path, style: "color:white; text-decoration:none" %>
+                        <%=link_to 'TIENDA', products_path, style: "color:white; text-decoration:none" %>
                     </li>
                     <li class="nav-item mx-2">
-                        <%=link_to 'CLIENTES', clients_path, style: "color:white; text-decoration:none" %>
+                        <%=link_to 'NUESTROS EMPRENDEDORES', blog_index_path, style: "color:white; text-decoration:none" %>
                     </li>
                     <li class="nav-item mx-2">
-                        <%=link_to 'PEDIDO', orders_path, style: "color:white; text-decoration:none" %>
+                        <%=link_to 'BLOG', blog_index_path, style: "color:white; text-decoration:none" %>
                     </li>
                     <li class="nav-item mx-2">
+                        <%=link_to 'CONTACTO', contact_index_path, style: "color:white; text-decoration:none" %>
+                    </li>
+
+
+                    <!--<li class="nav-item mx-2">
                         <%=link_to 'DETALLE PEDIDO', details_path, style: "color:white; text-decoration:none" %>
                     </li>
-                    <!-- <li class="nav-item">
+                     <li class="nav-item">
                         <a class="nav-link active" href="#">MI CUENTA</a>
                     </li> -->
                     <!-- <li class="nav-item dropdown">
