@@ -43,3 +43,8 @@
 .color-white {
     color: #ffffff;
 }
+
+.avatar-size{
+    width: 10px;
+    height: 10px;
+}

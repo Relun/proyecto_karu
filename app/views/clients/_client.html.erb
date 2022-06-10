@@ -28,5 +28,9 @@
     <strong>Phone:</strong>
     <%= client.phone %>
   </p>
-
+  
+  <div>
+    <strong>Foto perfil:</strong>
+    <%= image_tag rails_blob_url(client.avatar) %>
+  </div>
 </div>

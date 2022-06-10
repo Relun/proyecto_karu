@@ -6,6 +6,13 @@
       <div>
         <%= image_tag(product.url_img, class: 'img-responsive center-block img-fluid imagen') %>
       </div>
+
+      <div>
+       
+        <%= image_tag product.images.last %>
+       
+      </div>
+
         <div class="card-body">
           <p class="card-text"><strong></strong> <%= product.title %></p>
           <p class="card-text"><strong>$</strong> <%= product.price %></p>
