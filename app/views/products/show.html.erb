@@ -3,7 +3,20 @@
   <div class="card mb-3 border-0" style="max-width: 50rem;">
     <div class="row g-0">
       <div class="col-md-4">
-        <%= image_tag(@product.url_img, class: 'img-fluid rounded-start') %>
+        <% if @product.url_img.present? %> 
+          <div>
+            <%= image_tag(@product.url_img, class: 'img-fluid rounded-start') %>
+          </div>
+        <% elsif @product.images.present? %>
+          <div>
+              <%= image_tag @product.images.last %>
+          </div>
+        <% else %>
+          <div>
+            <p>No hay imagen</p>
+          </div>
+        <% end %>
+
       </div>
       <div class="col-md-8">
         <div class="card-body">

@@ -3,15 +3,20 @@
   <div class="row mx-auto text-center">
     <div class="col-12 col-md-6 col-lg-3">
       <div class="card mx-5 my-2" style="width: 16rem;">
-      <div>
-        <%= image_tag(product.url_img, class: 'img-responsive center-block img-fluid imagen') %>
-      </div>
 
+  <% if product.url_img.present? %> 
+        <div>
+          <%= image_tag(product.url_img, class: 'img-responsive center-block img-fluid imagen') %>
+        </div>
+  <% elsif product.images.present? %>
       <div>
-       
         <%= image_tag product.images.last %>
-       
-      </div>
+     </div>
+  <% else %>
+    <div>
+        <p>No hay imagen</p>
+     </div>
+ <% end %>
 
         <div class="card-body">
           <p class="card-text"><strong></strong> <%= product.title %></p>

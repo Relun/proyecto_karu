@@ -1,4 +1,10 @@
 <div id="<%= dom_id client %>">
+
+  <div>
+    <strong>Foto perfil:</strong><br><br>
+    <%= image_tag rails_blob_url(client.avatar) %>
+  </div>
+  <br>
   <p>
     <strong>Rut:</strong>
     <%= client.rut %>
@@ -29,8 +35,4 @@
     <%= client.phone %>
   </p>
   
-  <div>
-    <strong>Foto perfil:</strong>
-    <%= image_tag rails_blob_url(client.avatar) %>
-  </div>
 </div>
